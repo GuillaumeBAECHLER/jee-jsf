@@ -5,8 +5,10 @@
  */
 package monapp;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -16,7 +18,7 @@ import javax.faces.context.FacesContext;
 
 @ManagedBean(name = "course")
 @SessionScoped
-public class CourseController {
+public class CourseController implements Serializable {
     
     @EJB
     CourseManager cm;
@@ -34,7 +36,7 @@ public class CourseController {
         }
     }
 
-    public Map<Integer, Course> getCourses() {
+    public Map<String, Course> getCourses() {
         return cm.findCourses();
     }
 
@@ -42,8 +44,9 @@ public class CourseController {
         return theCourse;
     }
 
-    public String show(Integer n) {
+    public String show(String n) {
         theCourse = cm.findCourse(n);
+        System.out.println(n);
         return "showCourse";
     }
 

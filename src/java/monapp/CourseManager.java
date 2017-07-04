@@ -5,6 +5,7 @@
  */
 package monapp;
 
+import java.util.UUID;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.ejb.Stateless;
@@ -19,22 +20,24 @@ import java.util.Map;
 @Stateless
 public class CourseManager {
 
-    private Map<Integer,Course> listeCourses;
+    private Map<String,Course> listeCourses;
 
     public CourseManager() {
         listeCourses = new HashMap();
     }
 
-    public Map<Integer,Course> findCourses() {
+    public Map<String,Course> findCourses() {
         return listeCourses;
     }
 
-    public Course findCourse(Integer n) {    
-// a coder
-        return null;
+    public Course findCourse(String n) {
+        return listeCourses.get(n);
     }
 
     public Course saveCourse(Course c) {
+        if(c.getId() == null){
+            c.setId(UUID.randomUUID().toString());
+        }
         listeCourses.put(c.getId(), c);
         return c;
     }

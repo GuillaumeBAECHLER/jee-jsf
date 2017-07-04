@@ -6,6 +6,7 @@
 package monapp;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  *
@@ -13,11 +14,13 @@ import java.io.Serializable;
  */
 public class Course implements Serializable {
 
-    Integer id;
+    String id;
     String name;
     Integer hours;
     String level;
     String description;
+    
+    private static final long serialVersionUID = 5L;
 
     public String getLevel() {
         return level;
@@ -27,11 +30,11 @@ public class Course implements Serializable {
         this.level = level;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
