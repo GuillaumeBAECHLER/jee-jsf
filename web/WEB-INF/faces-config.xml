@@ -7,11 +7,11 @@ http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     <!-- Configuration de l'application -->
     <application>
         <resource-bundle>
-            <base-name>resources.messages</base-name>
+            <base-name>monapp.resources.messages</base-name>
             <var>messages</var>
         </resource-bundle>
         <message-bundle>
-            resources.messages
+            monapp.resources.messages
         </message-bundle>
         <locale-config>
             <default-locale>en</default-locale>
