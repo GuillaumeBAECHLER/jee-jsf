@@ -29,6 +29,10 @@ public class ApplicationCounter implements Serializable {
         return ++value;
     }
     
+    public int nextValue(){
+        return value + 1;
+    }
+    
     @PostConstruct
     void init() {
         System.err.println("Create " + this);
