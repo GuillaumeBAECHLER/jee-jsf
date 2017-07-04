@@ -18,6 +18,9 @@ import javax.enterprise.context.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class Counter implements Serializable {
+    
+    private static final long serialVersionUID = 3L;
+    
     Integer value = 1000;
     
     /**
