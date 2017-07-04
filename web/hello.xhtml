@@ -7,13 +7,14 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:body>
         <ui:composition template="/template/mylayout.xhtml">
+            <ui:define name="title">Hello</ui:define>
+            <ui:define name="header">#{messages.mySuperAppli}</ui:define>
             <ui:define name="content">
                 <h1>
                     <h:outputText value="#{messages.helloWorld}" />
                 </h1>
                 <h:graphicImage library="theme1" name="surprise.jpg" />
             </ui:define>
-            <ui:define name="title">Hello</ui:define>
         </ui:composition>
     </h:body>
 </html>

@@ -7,15 +7,24 @@ http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     <!-- Configuration de l'application -->
     <application>
         <resource-bundle>
-            <base-name>monapp.resources.messages</base-name>
+            <base-name>resources.messages</base-name>
             <var>messages</var>
         </resource-bundle>
         <message-bundle>
-            monapp.resources.messages
+            resources.messages
         </message-bundle>
         <locale-config>
             <default-locale>en</default-locale>
             <supported-locale>fr</supported-locale>
         </locale-config>
     </application>
+    <navigation-rule>
+        <display-name>Home</display-name>
+        <from-view-id>/bye.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/hello.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
